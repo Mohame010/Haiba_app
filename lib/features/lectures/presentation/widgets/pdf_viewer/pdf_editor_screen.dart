@@ -50,7 +50,7 @@ class _PdfEditorScreenState extends State<PdfEditorScreen> {
   void initState() {
     super.initState();
     if (_shouldProtectScreen) {
-      ScreenProtectionService.acquire();
+      ScreenProtectionService.release();
     }
     editor = PdfEditorController(url: widget.pdfUrl, title: widget.title);
     editor.addListener(_loadingListener);

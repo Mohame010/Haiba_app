@@ -51,7 +51,7 @@ class _LectureDetailsScreenState extends State<LectureDetailsScreen> {
   @override
   void initState() {
     super.initState();
-    ScreenProtectionService.acquire();
+    ScreenProtectionService.release();
     context.read<LectureDetailsCubit>().loadLecture(widget.lectureId);
     _loadDownloadState();
     _loadResumePosition();
