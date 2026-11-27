@@ -6,7 +6,7 @@ workflows:
     max_build_duration: 90
 
     integrations:
-      app_store_connect: YOUR_APP_STORE_CONNECT_INTEGRATION_NAME
+      app_store_connect: HAIBA-Codemagic
 
     environment:
       flutter: stable
@@ -18,7 +18,7 @@ workflows:
         bundle_identifier: com.qimma.education
 
       vars:
-        APP_STORE_APPLE_ID: "YOUR_APPLE_APP_ID"
+        APP_STORE_APPLE_ID: "6836338163"
 
     scripts:
       - name: Get Flutter packages
@@ -33,12 +33,16 @@ workflows:
       - name: Configure iOS signing
         script: xcode-project use-profiles
 
-      - name: Increment build number
+      - name: Build and increment version
         script: |
           LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID" 2>/dev/null || echo 0)
           BUILD_NUMBER=$((LATEST_BUILD_NUMBER + 1))
-          echo "Building version: $BUILD_NUMBER"
-          flutter build ipa --release --build-number="$BUILD_NUMBER"
+
+          echo "Building HAIBA - Build $BUILD_NUMBER"
+
+          flutter build ipa --release \
+            --build-number="$BUILD_NUMBER" \
+            --export-options-plist="$HOME/export_options.plist"
 
     artifacts:
       - build/ios/ipa/*.ipa
@@ -56,7 +60,7 @@ workflows:
     max_build_duration: 90
 
     integrations:
-      app_store_connect: YOUR_APP_STORE_CONNECT_INTEGRATION_NAME
+      app_store_connect: HAIBA-Codemagic
 
     environment:
       flutter: stable
@@ -68,7 +72,7 @@ workflows:
         bundle_identifier: com.qimma.education
 
       vars:
-        APP_STORE_APPLE_ID: "YOUR_APPLE_APP_ID"
+        APP_STORE_APPLE_ID: "6836338163"
 
     scripts:
       - name: Get Flutter packages
@@ -83,12 +87,16 @@ workflows:
       - name: Configure iOS signing
         script: xcode-project use-profiles
 
-      - name: Increment build number
+      - name: Build and increment version
         script: |
           LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID" 2>/dev/null || echo 0)
           BUILD_NUMBER=$((LATEST_BUILD_NUMBER + 1))
-          echo "Building version: $BUILD_NUMBER"
-          flutter build ipa --release --build-number="$BUILD_NUMBER"
+
+          echo "Building HAIBA - Build $BUILD_NUMBER"
+
+          flutter build ipa --release \
+            --build-number="$BUILD_NUMBER" \
+            --export-options-plist="$HOME/export_options.plist"
 
     artifacts:
       - build/ios/ipa/*.ipa
