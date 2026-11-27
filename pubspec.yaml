@@ -55,7 +55,7 @@ dependencies:
   pdfrx: ^3.1.0
   path_provider: ^2.1.5
   webview_flutter: ^4.10.0
-  awesome_notifications: ^0.10.1
+  awesome_notifications: ^0.12.1
   firebase_messaging: ^16.5.0
   firebase_core: ^4.13.0
   rename: ^3.1.0
