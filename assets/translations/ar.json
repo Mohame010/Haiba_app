@@ -1,0 +1,16 @@
+{
+  "skip": "مش دلوقتي",
+  "next": "اللي بعده",
+  "onboarding": {
+    "get_started": "ابدأ دلوقتي",
+    "onboarding_title_1_part_1": "كل حاجة",
+    "onboarding_title_1_part_2": " حواليك",
+    "onboarding_desc_1": "اكتشف أحلى المحلات والخدمات القريبة منك، وكل اللي محتاجه في مكان واحد.",
+    "onboarding_title_2_part_1": "اطلبها",
+    "onboarding_title_2_part_2": " على مزاجك",
+    "onboarding_desc_2": "اختار اللي محتاجه، ضيفه للسلة، وكمّل طلبك في كام خطوة بسيطة.",
+    "onboarding_title_3_part_1": "طلبك في",
+    "onboarding_title_3_part_2": " طريقه ليك",
+    "onboarding_desc_3": "اطلب وإحنا نهتم بالباقي، وأوردرك هيوصل لك في أسرع وقت."
+  }
+}

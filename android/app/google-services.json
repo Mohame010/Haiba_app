@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "450141595816",
+    "project_id": "heiba-989d3",
+    "storage_bucket": "heiba-989d3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450141595816:android:59be254aafa1d594d7ba9d",
+        "android_client_info": {
+          "package_name": "com.qimma.education"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt5nTgMRnElq9JGpZR4Qv6sPCeTSY8HyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
