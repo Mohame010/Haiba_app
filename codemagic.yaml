@@ -35,10 +35,17 @@ workflows:
 
       - name: Build and increment version
         script: |
-          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID" 2>/dev/null || echo 0)
+          set -e
+
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-build-number \
+            --platform IOS \
+            --all-versions \
+            "$APP_STORE_APPLE_ID")
+
           BUILD_NUMBER=$((LATEST_BUILD_NUMBER + 1))
 
-          echo "Building HAIBA - Build $BUILD_NUMBER"
+          echo "Latest uploaded build: $LATEST_BUILD_NUMBER"
+          echo "New HAIBA build number: $BUILD_NUMBER"
 
           flutter build ipa --release \
             --build-number="$BUILD_NUMBER" \
@@ -89,10 +96,17 @@ workflows:
 
       - name: Build and increment version
         script: |
-          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID" 2>/dev/null || echo 0)
+          set -e
+
+          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-build-number \
+            --platform IOS \
+            --all-versions \
+            "$APP_STORE_APPLE_ID")
+
           BUILD_NUMBER=$((LATEST_BUILD_NUMBER + 1))
 
-          echo "Building HAIBA - Build $BUILD_NUMBER"
+          echo "Latest uploaded build: $LATEST_BUILD_NUMBER"
+          echo "New HAIBA build number: $BUILD_NUMBER"
 
           flutter build ipa --release \
             --build-number="$BUILD_NUMBER" \
